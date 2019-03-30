@@ -12,7 +12,7 @@ header("Content-type: application/json");
 
 //carrega uma lista de usuarios
 
-//echo json_encode(Usuario::getList());
+// echo json_encode(Usuario::getList());
 
 
 //carrega uma lista de usuarios buscando pelo login
@@ -21,9 +21,27 @@ header("Content-type: application/json");
 
 
 //carrega um usuário usando login e senha
+// $usr = new Usuario();
+
+// $usr->login("CDG","123123");
+
+// echo $usr;
+
+
+//insert de um novo usuário
+// $aluno = new Usuario("José","sla");
+
+// $aluno->insert();
+
+// echo $aluno;
+
+
+//update de um novo usuario
 $usr = new Usuario();
 
-$usr->login("CDG","123123");
+$usr->loadById(9);
+
+$usr->update("Prof","melhor professor do mundo");
 
 echo $usr;
 
