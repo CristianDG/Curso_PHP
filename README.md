@@ -1,2 +1,2 @@
 # Curso_PHP
-Neste repositório você tem acesso a um exemplo de DAO (Data Access Object)
+Neste repositório você tem acesso a um exemplo de Data Access Object (ainda incompleto)

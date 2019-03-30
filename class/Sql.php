@@ -40,7 +40,7 @@ class Sql extends PDO{
     
         $stmt = $this->query($rawQuery,$params);
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     
     }
 
