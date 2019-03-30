@@ -1,2 +1,2 @@
 # Curso_PHP
-Somente para testes aleatorios
+Neste repositório você tem acesso a um exemplo de DAO (Data Access Object)
