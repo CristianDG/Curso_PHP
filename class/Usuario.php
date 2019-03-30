@@ -72,6 +72,42 @@ class Usuario{
         ));
     }
 
+    public static function getList(){
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_usuario ORDER BY login");
+    }
+
+    static function search($login){
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_usuario WHERE login LIKE :SEARCH ORDER BY login",array(
+            ":SEARCH"=>"%{$login}%"
+        ));
+    }
+
+    public function login($login,$senha){
+        $sql = new Sql();
+
+        $res = $sql->select("SELECT * FROM tb_usuario WHERE login = :LOGIN AND senha = :SENHA", array(
+            ":LOGIN"=>$login,
+            ":SENHA"=>$senha
+        ));
+
+        if(count($res)>0){
+            $row = $res[0];
+
+            $this->setId_usuario($row->id_usuario);
+            $this->setLogin($row->login);
+            $this->setSenha($row->senha);
+            $this->setData_cadastro(new DateTime($row->data_cadastro));
+
+        }else{
+
+            throw new Exception("Login e/ou senha inválidos.");
+            
+        }
+    }
 
 }
 
